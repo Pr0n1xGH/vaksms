@@ -23,7 +23,7 @@ vakapi = vaksms('your_apikey')
 
 # Get the user's balance
 balance = vakapi.getBalance()
-print(f"Current balance: {balance} rub")
+print(f"Current balance: {balance}")
 
 # Get the number of available numbers for a specific service
 count = vakapi.getCountNumber('service_code')
@@ -32,6 +32,14 @@ print(f"Available numbers: {count}")
 # Get a temporary phone number
 number = vakapi.getNumber('service_code')
 print(f"Temporary number: {number}")
+
+# Extend the duration of a previously received number
+extended_number = vakapi.prolongNumber('service_code', 'phone_number')
+print(f"Extended number: {extended_number}")
+
+# Change the status of an operation ID
+status = vakapi.setStatus('operation_id', 'end')
+print(f"Status: {status}")
 
 # Activate SMS code for a specific operation ID
 sms_code = vakapi.getSmsCode('operation_id')
