@@ -10,8 +10,8 @@ pip install vaksms
 ```
 
 ## Usage
-Get apikey: https://vak-sms.com/api/vak/
-Services: https://vak-sms.com/api/vak/#serviceCodeList1
+Get apikey: https://vak-sms.com/api/vak/ <br>
+Services: https://vak-sms.com/api/vak/#serviceCodeList1 <br>
 Countres and operators: https://vak-sms.com/api/vak/#countryOperatorList1
 
 ```python
