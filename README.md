@@ -23,7 +23,7 @@ vakapi = vaksms('your_apikey')
 
 # Get the user's balance
 balance = vakapi.getBalance()
-print(f"Current balance: {balance}")
+print(f"Current balance: {balance} rub")
 
 # Get the number of available numbers for a specific service
 count = vakapi.getCountNumber('service_code')
