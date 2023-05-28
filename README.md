@@ -5,7 +5,35 @@ VakSms is a Python library that provides an API for interacting with the vak-sms
 ## Installation
 
 You can install the library using pip:
-```sheel
-pip install vaksms```
+```shell
+pip install vaksms
+```
 
 ## Usage
+Get apikey: https://vak-sms.com/api/vak/
+Services: https://vak-sms.com/api/vak/#serviceCodeList1
+Countres and operators: https://vak-sms.com/api/vak/#countryOperatorList1
+
+```python
+
+from vaksms import vaksms
+
+# Create an instance of the vaksms class with your API key
+vakapi = vaksms('your_apikey')
+
+# Get the user's balance
+balance = vakapi.getBalance()
+print(f"Current balance: {balance} rub")
+
+# Get the number of available numbers for a specific service
+count = vakapi.getCountNumber('service_code')
+print(f"Available numbers: {count}")
+
+# Get a temporary phone number
+number = vakapi.getNumber('service_code')
+print(f"Temporary number: {number}")
+
+# Activate SMS code for a specific operation ID
+sms_code = vakapi.getSmsCode('operation_id')
+print(f"SMS code: {sms_code}")
+```
