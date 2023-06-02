@@ -44,7 +44,7 @@ class vaksms:
             service: str, 
             country: str = "ru", 
             operator: str = None, 
-            price: str = None,
+            price: bool = False,
             numList: bool = False
     ):
         """Gives the number of available numbers
@@ -73,17 +73,17 @@ class vaksms:
 
         if numList == True: ...
 
-        url = f"https://vak-sms.com/api/getCountNumber/?apiKey={self.ApiKey}&service={service}&country={country}&operator={operator}&price={price}"
+        url = f"https://vak-sms.com/api/getCountNumber/?apiKey={self.ApiKey}&service={service}&country={country}&operator={operator}&price"
 
         if operator is None:
             url = re.sub(f"&operator={operator}", "", url)
         
-        if price is None:
-            url = re.sub(f"&price={price}", "", url)
+        if price is False:
+            url = re.sub(f"&price", "", url)
 
         getCountNumber = requests.get(url).text
 
-        return json.loads(getCountNumber)[f'{service}']
+        return getCountNumber
     
     
     def getNumber(
